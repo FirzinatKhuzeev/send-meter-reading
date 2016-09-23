@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Передача показаний счетчиков воды</title>
+    <meta charset="utf-8" />
+    <link href="stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="stylesheets/bootstrap-theme.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1">
+                <p class="lead">С помощью данной формы Вы можете передать показания водоснабжения, предоставляемые управляющей компанией
+                    ООО «УК «Центр-МК» г. Казань.</p>
+                    <hr>
+                <form id="water-form" role="form" data-toggle="validator" action="send-water-meters.php" method="post">
+                    <div class="controls">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="form-settlement-account">Лицевой счет</label>
+                                    <input id="form-settlement-account" type="number" name="settlementaccount" class="form-control" placeholder="Номер лицевого счета"
+                                        maxlength="30">
+                                </div>
+                            </div>
+                        </div>                        
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="form-lastname">Фамилия *</label>
+                                    <input id="form-lastname" type="text" name="surname" class="form-control" maxlength="20" required="required" data-error="Укажите Вашу фамилию">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="form-name">Имя *</label>
+                                    <input id="form-name" type="text" name="name" class="form-control" maxlength="20" required="required" data-error="Укажите Ваше имя">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="form-middle">Отчество *</label>
+                                    <input id="form-middle" type="text" name="middlename" class="form-control" maxlength="20" required="required" data-error="Укажите Ваше отчество">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="form-sity">Город</label>
+                                    <input id="form-sity" type="text" name="city" class="form-control" value="г. Казань" readonly="readonly">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="form-street">Улица</label>
+                                    <input id="form-street" type="text" name="street" class="form-control" value="ул. Рауиса Гареева" readonly="readonly">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="form-home">Дом *</label>
+                                    <select id="form-home" name="home" class="form-control" required="required" data-error="Укажите Ваш номер дома" title="Укажите Ваш номер дома">
+                                        <option value=""></option>
+                                        <option value="92">Первый дом (92)</option>
+                                        <option value="94">Второй дом (94)</option>
+                                        <option value="96">Третий дом (96)</option>
+                                        <option value="98">Четвертый дом (98)</option>
+                                        <option value="100">Пятый дом (100)</option>
+                                    </select>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="form-apartment">Квартира *</label>
+                                    <input id="form-apartment" type="number" name="apartment" class="form-control" min="1" max="999" required="required" placeholder="Номер квартиры" data-error="Укажите Ваш номер квартиры">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="panel panel-info">
+                                    <div class="panel-heading">Ванная комната</div>
+                                    <div class="panel-body">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="form-water-meter-one">Счетчик №1 <abbr title="Горячее водоснабжение">ГВС</abbr> *</label>
+                                                <input id="form-water-meter-one" type="text" name="watermeterone" class="form-control" placeholder="Показания счетчика №1"
+                                                    maxlength="8" required="required" data-error="Счетчик №1 не заполнен">
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="form-water-meter-two">Счетчик №2 <abbr title="Холодное водоснабжение">ХВС</abbr> *</label>
+                                                <input id="form-water-meter-two" type="text" name="watermetertwo" class="form-control" placeholder="Показания счетчика №2"
+                                                    maxlength="8" required="required" data-error="Счетчик №2 не заполнен">
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="panel panel-success">
+                                    <div class="panel-heading">Кухня</div>
+                                    <div class="panel-body">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="form-water-meter-three">Счетчик №3. <abbr title="Горячее водоснабжение">ГВС</abbr>:</label>
+                                                <input id="form-water-meter-three" type="text" name="watermeterthree" class="form-control" placeholder="Показания счетчика №3"
+                                                    maxlength="8">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="form-water-meter-four">Счетчик №4. <abbr title="Холодное водоснабжение">ХВС</abbr>:</label>
+                                                <input id="form-water-meter-four" type="text" name="watermeterfour" class="form-control" placeholder="Показания счетчика №4"
+                                                    maxlength="8">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="form-message">Сообщение</label>
+                                <textarea id="form-message" name="message" class="form-control" placeholder="Дополнительная информация" rows="4" maxlength="2000"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" value="" required="required" data-error="Вы не согласны на обработку персональных данных">Согласен на обработку персональных данных.</label>
+                            </div>
+                            <a target="_blank" href="agreement.html">Открыть</a>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="col-md-12">
+                            <input type="submit" class="btn btn-success btn-send" value="Отправить показания">
+                        </div>
+                    </div>
+            </div>
+            </form>
+        </div>
+    </div>
+    </div>
+    <script src="javascripts/jquery-1.9.1.min.js"></script>
+    <script src="javascripts/validator.min.js"></script>
+    <script src="javascripts/bootstrap.min.js"></script>
+    <script src="javascripts/water-meters.js"></script>
+</body>
+
+</html>
