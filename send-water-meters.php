@@ -1,6 +1,6 @@
 ﻿<?php
 
-$to      = "oooukzentvrmk@mail.ru";
+$to      = "some@some.ru";
 $subject = "Показания счетчиков воды";
 
 $headers = "MIME-Version: 1.0" . "\r\n";
