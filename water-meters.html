@@ -14,8 +14,8 @@
             <div class="col-lg-10 col-lg-offset-1">
                 <p class="lead">С помощью данной формы Вы можете передать показания водоснабжения, предоставляемые управляющей компанией
                     ООО «УК «Центр-МК» г. Казань.</p>
-                    <hr>
-                <form id="water-form" role="form" data-toggle="validator" action="send-water-meters.php" method="post">
+                <hr>
+                <form id="water-form" role="form" data-toggle="validator" role="form" method="post" action="send-water-meters.php">
                     <div class="controls">
                         <div class="row">
                             <div class="col-md-6">
@@ -25,7 +25,7 @@
                                         maxlength="30">
                                 </div>
                             </div>
-                        </div>                        
+                        </div>
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
@@ -79,7 +79,8 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="form-apartment">Квартира *</label>
-                                    <input id="form-apartment" type="number" name="apartment" class="form-control" min="1" max="999" required="required" placeholder="Номер квартиры" data-error="Укажите Ваш номер квартиры">
+                                    <input id="form-apartment" type="number" name="apartment" class="form-control" min="1" max="999" required="required" placeholder="Номер квартиры"
+                                        data-error="Укажите Ваш номер квартиры">
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
@@ -146,7 +147,7 @@
                             <div class="help-block with-errors"></div>
                         </div>
                         <div class="col-md-12">
-                            <input type="submit" class="btn btn-success btn-send" value="Отправить показания">
+                            <button type="submit" class="btn btn-success btn-send" name="submit" value="Отправить показания">Отправить показания</button>
                         </div>
                     </div>
             </div>
