@@ -3,9 +3,9 @@
 $to      = "example@example.com";
 $subject = "Показания счетчиков воды";
 
-$headers = "MIME-Version: 1.0" . "\r\n";
-$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-$headers .= "From: <water-meters@huzferd.ru>" . "\r\n";
+$headers = "MIME-Version: 1.0"."\r\n";
+$headers .= "Content-type:text/html;charset=UTF-8"."\r\n";
+$headers .= "From: <example@example.com>"."\r\n";
 
 $body = "<h1>Показания счетчиков воды</h1>";
 
